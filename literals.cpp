@@ -1,4 +1,8 @@
+/*
+source http://www.cplusplus.com/doc/tutorial/constants/
+*/
 #include <iostream>
+#include<string>
 
 using namespace std;
 
@@ -37,5 +41,55 @@ int main()
     auto xE= 6.02e23; // 6.02 * 10 ^23
     cout<<"sizeof xE "<<sizeof(xE)<<":"<<xE<<endl;
     
+    
+    /*Character OR string literals*/
+    auto xc ='x'; //Character
+    string xs = "xyzpqddddasadasfasfasfafafafafa";//string
+    cout<<sizeof(xc)<<":"<<sizeof(xs)<<":"<<xs.length()<<endl;
+    
+    
+    
+    auto xc16_auto = 'uC'; // by default any Character is char32_t
+    char16_t xc16 = 'uC';   
+    auto xc32 = 'Uc';           /*unlike suffix in integer literals 'u' and 'U' are diffrent in Character literals*/
+    //char32_t xc32 = 'Uc';
+    auto xcWide = 'Lc';
+    //wchar_t xcWide = 'Lc';
+    cout<<sizeof(xc16)<<":"<<xc16<<endl;
+    cout<<sizeof(xc16_auto)<<":"<<xc16_auto<<endl;
+    cout<<sizeof(xc32)<<":"<<xc32<<endl;
+    cout<<sizeof(xcWide)<<":"<<xcWide<<endl;
+    
+    /*for raw string and UTF encoding 
+    https://docs.microsoft.com/en-us/cpp/cpp/string-and-character-literals-cpp?view=vs-2019
+    */
+    
+    /*Special Character OR space sequence 
+    These are collection of two or more Character is specfifc order , start from '\'
+    for example '\n' is new line symbol, we consider this sequence as Character not as string 
+    onternally its represent a single Character as ASCII code, \n or \<code is Octal/Hexadecimal>
+    \n or \20 or \x4A
+    */
+    
+    
+    
+    
+    /*string literals*/
+    string s = "this "   "is"  "    satendra   " ":";
+    cout<<"|"<<s<<"|"<<s.length()<<endl;
+    
+    string s1 =" line 1  \
+    line 2 \
+    lin3 ";
+    cout<<"|"<<s1<<"|"<<s1.length()<<endl;
+    
+    /*Special literals*/
+    bool    test    =   true,       //set TRUE value                its not c-style  > 0
+            test2   =   false;      // set FALSE value              its not c-style  < 0
+    int     *ptr    = nullptr;      // set null value to pointer    its not c-style NULL i.e. void*(0)
+    
+    
+       
     return 0;
 }
+
