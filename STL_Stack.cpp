@@ -58,8 +58,8 @@ int Stack::top(){
 }
 
 int Stack::pop(){
-    cout<<"Head Value is "<<head<<endl;
-    int tValue;assert(tValue=stack[5]);
+    cout<<"POP Head Value is "<<head<<endl;
+    int tValue;assert(tValue=stack[head]);
     --head;
     return (tValue);
 }
@@ -116,7 +116,7 @@ int main()
     cout<<ls->push(88);
     cout<<"\n"<<ls->empty()<<":"<<ls->isFull()<<":"<<ls->size()<<endl;
     cout<<ls->top()<<":"<<ls->size()<<endl;
-    cout<<ls->pop()<<":"<<ls->size()<<":"<<ls->top()<<endl;
+    cout<<ls->pop()<<":"<<ls->size()<<":"<<ls->top()<<":"<<ls->pop()<<endl;  // NOTE COUT expression resolve in right to left menner 
     
     
     return 0;
