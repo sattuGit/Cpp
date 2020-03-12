@@ -58,7 +58,12 @@ int main(){
 		
 	cout<<endl<<"++i"<<t1<<":: i++"<<t2<<endl;
 	
-	
+	/* executable memory analysis
+	 * satendra@workBook:~/Desktop/sattuGit$ size a.out
+   text	   data	    bss	    dec	    hex	filename
+   3531	    688	    280	   4499	   1193	a.out
+	 *
+	 */
 	
 
 	
