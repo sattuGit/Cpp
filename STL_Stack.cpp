@@ -1,3 +1,7 @@
+/*
+Author   :  Satendra K Gupta 
+Hands on :  STL Stack and Implement our own stack for learning 
+*/
 #include <iostream>
 #include<cassert>
 #include<stack>
@@ -9,15 +13,30 @@ using namespace std;
 
 class Stack
 {
+    /*
+    TODO: Implement elastic stack , increse or decrese dynaminc, 
+            Therer would be two approch , (A) is redinfe(vertical), another (B) is horizontal scale all more memory pool
+            A) is costly everytime we increse or decrese
+            B) every operation need bit more instruction cycle but over all it will deliver good performance 
+    */
+    
+    
     private:
         int head ;
         int limit;
         int *stack;
     public:
-        Stack(int index=-1,int size=100):head(index),limit(size){
-            cout<<"Constructer triggred\n";
-            assert(stack = new int[size]);
-            for(int i=0;i<size;++i) stack[i]=0;
+        Stack(int size=100,int index=-1):head(index),limit(size){
+            //cout<<"Constructer triggred\n";
+            try
+            {
+                assert(stack = new int[size]);
+            }
+            catch(std::bad_alloc&){
+                cout<<"Dynamic memory Error\n";
+            }
+            //for(int i=0;i<size;++i) stack[i]=0;
+            
         }
         bool    empty();
         int     pop();
@@ -28,19 +47,18 @@ class Stack
 };      
 
 bool Stack::isFull(){
-    return (size()<=limit)? false:true;
+    return (head>=(limit-1))? true:false;
 }
 
 int Stack::size(){
-    cout<<"***"<<head<<"***\n";
     return (head+1);
 }
 
 bool Stack::push(int argVal){
     if(!isFull()) //checkOverFlow
     {
+        stack[head+1]=argVal;
         ++head;
-        stack[head]=argVal;
         return true;
     }
     return false;
@@ -58,7 +76,7 @@ int Stack::top(){
 }
 
 int Stack::pop(){
-    cout<<"POP Head Value is "<<head<<endl;
+    //cout<<"POP Head Value is "<<head<<endl;
     int tValue;assert(tValue=stack[head]);
     --head;
     return (tValue);
@@ -106,14 +124,14 @@ int main()
     
     
     /* LOCAL implementation of stack*/
-    Stack *ls = new Stack();
+    Stack *ls = new Stack(5);
     cout<<"\n"<<ls->empty()<<":"<<ls->isFull()<<":"<<ls->size()<<endl;
-    cout<<ls->push(10);
-    cout<<ls->push(30);
-    cout<<ls->push(20);
-    cout<<ls->push(5);
-    cout<<ls->push(99);
-    cout<<ls->push(88);
+    if(!ls->push(10))cout<<"Push Operation is rejected \n";
+    if(!ls->push(30))cout<<"Push Operation is rejected \n";
+    if(!ls->push(20))cout<<"Push Operation is rejected \n";
+    if(!ls->push(5) )cout<<"Push Operation is rejected \n";
+    if(!ls->push(99))cout<<"Push Operation is rejected \n";
+    if(!ls->push(88))cout<<"Push Operation is rejected \n";
     cout<<"\n"<<ls->empty()<<":"<<ls->isFull()<<":"<<ls->size()<<endl;
     cout<<ls->top()<<":"<<ls->size()<<endl;
     cout<<ls->pop()<<":"<<ls->size()<<":"<<ls->top()<<":"<<ls->pop()<<endl;  // NOTE COUT expression resolve in right to left menner 
