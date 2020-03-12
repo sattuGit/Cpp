@@ -15,9 +15,10 @@ class Stack
 {
     /*
     TODO: Implement elastic stack , increse or decrese dynaminc, 
-            Therer would be two approch , (A) is redinfe(vertical), another (B) is horizontal scale all more memory pool
-            A) is costly everytime we increse or decrese
-            B) every operation need bit more instruction cycle but over all it will deliver good performance 
+            Therer could be two approch , (A) is redinfe(vertical), another one (B) is horizontal scale up by adding memory pools
+            A) is costly everytime, when we increse or decrese
+            B) every operation will need bit more instruction cycle but over all it will deliver good performance 
+    2)  Implement Copy Constructer and display method for class Stack 
     */
     
     
