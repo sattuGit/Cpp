@@ -136,7 +136,73 @@
     free(tDM_req1);tDM_req1=nullptr;
     free(tDM_req2);tDM_req2=nullptr;
     
-    /*--------------------------------------------------------------------------------------------------------------------------*/
-
+    /*=========================================================================================================================*/
+    /* new operator , as its operator its not trequired any header file to include */
+    int *p = nullptr;
+    p = new int;
+    
+    int *p1 =   new int;
+    int *p2 =   new int(10);
+    int *p3 =   new int{20};
+    int *p4 =   new int[*p2];
+    int *p4_1 =   new int[*p2];
+    int *p5 =   nullptr;
+    
+    
+    
+    cout<<p1<<":"<<p2<<":"<<p3<<":"<<p4<<":"<<p5<<endl;
+    cout<<p4<<":"<<p4+20<<endl;
+    /*--------delete---------
+        delete operator indentified dataType of pointer and delete rrelevent memory, 
+        its cant hold information based on non-datatype manner , so in case of delete array , it many couse memory leak
+        to delete array we have to call as -> delete p[]; its indicate to delete operator that given pointer is array of its dataType.
+    */
+    
+    delete  p1;
+    //delete  p1;  if you delete same memory twice it will throw similer error like  free , to avoid set in nulll after first delete
+    delete  p2; p2=nullptr;
+    delete  p2; 
+    delete  p3;
+    delete  p5;
+    delete  p4;     //memory leak
+    delete[]  p4_1;     //NO memory leak, delete whole memory block
+    
+    cout<<p1<<":"<<p2<<":"<<p3<<":"<<p4<<":"<<p5<<endl;
+    
+    
+    /*exception during new 
+     similer to any other memory operator, new may face memory shortage , it may fail with various reasons 
+     1) try...catch is one way to handle this 
+     2) no throw is another way 
+    */
+    
+    float *pDMEHandling_1 = nullptr;
+    try{
+        pDMEHandling_1 = new float[10];  //put 99999999999999999 to test bad_alloc exception 
+    }catch(const std::bad_alloc &e){
+        cout<<e.what()<<endl;   
+    }
+    
+    delete[] pDMEHandling_1; pDMEHandling_1=nullptr;
+    
+    
+    pDMEHandling_1 = new (std::nothrow) float[10];  //put 99999999999999999 to test bad_alloc exception 
+    if(!pDMEHandling_1){
+        cout<<"Memory request failed ..."<<pDMEHandling_1<<endl;
+    }else cout<<"return address is "<<pDMEHandling_1<<endl;
+    
+    delete[] pDMEHandling_1;pDMEHandling_1=nullptr;
+    
+    /*------------- FAQ----------------*/
+    /* Q    : What happen if we use delete this (this is special pointer available whithin class def scope by default )
+        Ans : First of all , this pointer is avaialbe within class scope irrespective of its memory allocation type 
+            object can be declare in two ways ,one is static another is dyanamic(usinng new )
+            delete is meant for dynamic memory allocated by new operator, so behavior of delete with pointer pointing to static memory is undefined 
+            Second: in dynamic memory case , once you used "delete this ", it will free associted memory, but pointer may keep holds address, so if you contignous
+            perform any operation , it may cause program to crash.
+            Final conclusion  is : We should avoid use 'delete' with 'this' pointer 
+    */
+    
     return 0;
  }
+
