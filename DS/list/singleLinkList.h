@@ -2,6 +2,7 @@
 #define NODES_LINK_LIST_
 
 #include "nodes.h"
+
 using namespace std;
 class SLList{
 	public 	:
@@ -23,6 +24,7 @@ class SLList{
 		bool addNode(int arg, int pos=1);
 		void display();
 		bool del(int);
+		void rev();
 		unsigned int getListCount(){return nodeCount;}
 	private :
 		unsigned int nodeCount;
@@ -30,6 +32,22 @@ class SLList{
 		Node *head;
 };
 
+void SLList::rev(){
+	if((!head) || (!(head->getLink()) )) return ;
+	Node *tmp3,*tmp2,*tmp1;
+	tmp1 = head ;
+	tmp2=tmp1->getLink();
+	if(tmp2)tmp3=tmp2->getLink();
+	
+	while(tmp2 || tmp3 ){
+		if(tmp2)tmp2->setLink(tmp1);
+		tmp1=tmp2;
+		tmp2=tmp3;
+		if(tmp3)tmp3=tmp3->getLink();
+	}
+	head->setLink(nullptr);
+	head = tmp1;
+}
 Node * SLList::getNode(int arg){
 	Node *tmp = new (std::nothrow) Node(arg);
 	return tmp;

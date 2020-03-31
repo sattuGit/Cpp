@@ -13,6 +13,7 @@ int main(){
 	cout<<" 2 for add new node at top \n";
 	cout<<" 3 for Remove node at specific position \n";
 	cout<<" 4 for Remove node at top \n";
+	cout<<" 5 for Reverce List \n";
 	cout<<" 9 for Display  \n";
 	cout<<" Any other for Exit \n";
 	cin>>choice;
@@ -23,6 +24,7 @@ int main(){
 					break;
 			case 3: cout<<"Pleases provied position of node to remove \n";cin >>pos;
 			case 4: sl->del(pos);break;
+			case 5: sl->rev();break;
 			case 9: sl->display(); break;
 			default: choice =0;
 		}
