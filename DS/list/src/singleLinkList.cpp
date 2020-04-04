@@ -1,6 +1,40 @@
 #include<iostream>
 #include "singleLinkList.h"
+#include "linkLoop.h"
 using namespace std;
+void SLList::testLoop(){
+	Node	* tmp = head ;
+	LinkLoop *llp = new LinkLoop();
+	while (tmp){
+		if(!llp->addUnique(tmp)){
+			cout<<"Loop found....@"<<tmp->getData()<<endl;
+			cout<<"List is going to repair ....\n";
+			{
+				Node *ptrTmpRepair = head ;
+				while(ptrTmpRepair->getLink()!=tmp)ptrTmpRepair=ptrTmpRepair->getLink();
+				ptrTmpRepair->setLink(nullptr);
+			}
+			return ;
+		}
+		tmp=tmp->getLink();
+	}
+	cout<<"No Cycle found ... \n";
+	/*free memory */
+	delete llp;
+}
+
+void SLList::makeLoop(){
+	Node *tmp =head ;
+	while (tmp){
+		//cout<<" "<<tmp->getData()<<endl;
+		if(tmp->getLink()){
+			tmp=tmp->getLink();
+		}else
+			break;
+	}
+	//cout<<"XXX "<<tmp->getData()<<" XXX"<<tmp->getLink();
+	tmp->setLink(head);
+}
 void SLList::rev(){
 	if((!head) || (!(head->getLink()) )) return ;
 	Node *tmp3,*tmp2,*tmp1;
@@ -51,6 +85,7 @@ void SLList::display(){
 	}
 	cout<<"NULL\n";	
 }
+
 
 bool SLList::addNode(int arg, int pos){
 	cout<<"arg "<<arg<<" pos "<<pos<<endl;

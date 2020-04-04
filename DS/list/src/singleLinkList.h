@@ -1,7 +1,7 @@
 #ifndef NODES_LINK_LIST_
 #define NODES_LINK_LIST_
 
-#include "nodes.h"
+#include "../../base/nodes.h"
 
 using namespace std;
 class SLList{
@@ -11,8 +11,7 @@ class SLList{
 			nodeCount=0;
 		}
 		~SLList(){
-			cout<<"distructer SSList"<<endl;
-			// need to delete memory by trversing  
+			/* free memory node by node */
 			Node *tmp=nullptr;
 			while (head){
 				tmp=head->getLink();
@@ -25,11 +24,14 @@ class SLList{
 		void display();
 		bool del(int);
 		void rev();
+		void testLoop();
+		void makeLoop();
 		unsigned int getListCount(){return nodeCount;}
 	private :
 		unsigned int nodeCount;
 		Node * getNode(int);
 		Node *head;
 };
+
 
 #endif
