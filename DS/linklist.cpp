@@ -18,7 +18,7 @@ int main(){
 	cout<<" 5 for Reverce List \n";
 	cout<<" 7 for Make Loop \n";
 	cout<<" 8 for FindLoop  \n";
-	cout<<" 9 for Display  \n";
+	cout<<" 9 for Display  \n"; 
 	cout<<" Any other for Exit \n";
 	cin>>choice;
 		switch(choice){
