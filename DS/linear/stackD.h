@@ -7,6 +7,17 @@
 #define SIZE 5
 #define SUCCESS         1
 #define FAIL            0
+struct stackError
+{
+    char *desc;
+    int errorCode;
+} error;
+
+int getHead(void);
+int isOverFlow(void);
+int isUnderFlow(void);
+int push(int);
+int pop(void);
 int* getStack(void);
 void setStack(int* );
 void displayStack(void);
