@@ -5,8 +5,7 @@ unsigned int stack[10];
 short head=-1;
 
 int isOverFLow(void){
-    //printf("CALLED %d,%d",head,SIZE);
-	return ((head==(SIZE-1))?SUCCESS:FAIL);
+    return ((head==(SIZE-1))?SUCCESS:FAIL);
 }
 
 int isUnderFlow(void){
