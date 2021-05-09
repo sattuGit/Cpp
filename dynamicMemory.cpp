@@ -77,7 +77,7 @@
     for(int i=0;i<10;++i) cout<<*(pTmpMemSet+i)<<",";
     cout<<"\n-----------------------------------------------------**\n";
     
-    
+    //TO-DO memset return same address which we passed in function for success : test and update code , would we good if test in c/c++ diffrently             
     
     
     /*-----------realloc----------------
