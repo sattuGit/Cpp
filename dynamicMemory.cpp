@@ -78,7 +78,9 @@
     cout<<"\n-----------------------------------------------------**\n";
     
     //TO-DO memset return same address which we passed in function for success : test and update code , would we good if test in c/c++ diffrently             
-    
+   /* TO-DO : memset is only work with 0 , non zero numeric value is not giving desired result 
+  https://stackoverflow.com/questions/17288859/using-memset-for-integer-array-in-c
+  */
     
     /*-----------realloc----------------
     * ptr = realloc(ptr, newSize);
