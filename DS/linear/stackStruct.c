@@ -3,7 +3,6 @@
 #include<string.h>      //memset
 #include<stdlib.h>      //memeory allocation 
 
-
 int allocateMem(dynamicStack *stack){
     if(stack->size_ <1) return FAIL;
     size_t blockSize= stack->size_ * stack->unitsize_;
@@ -24,11 +23,11 @@ int allocateMem(dynamicStack *stack){
 int initStack(dynamicStack *stack,size_t size,size_t unit)
 {
     stack->dataBlock_=NULL;
-    stack->head_=0;
+    stack->head_=SETEMPTY;
     stack->size_ = size;
     stack->errorCode_=0;
     
-    strcpy(stack->desc_,"INIT_NOERROR");
+    strcpy(stack->desc_,"INIT_NOERROR\n");
     printf("%s",stack->desc_);
     stack->unitsize_=unit;
     if(allocateMem(stack)==FAIL){
@@ -39,20 +38,39 @@ int initStack(dynamicStack *stack,size_t size,size_t unit)
     return SUCCESS;
 }
 
-//buildStack(10,sizeof(int))
-void* buildStack(size_t size, size_t unitsize){
-/*struct stack_{
-    void * dataBlock_;
-    size_t head_ ;
-    size_t size_;           //size_t is unsigned int, 
-    short   errorCode_;
-    char    desc_[25]; 
-    size_t unitsize_;
-};*/ 
-dynamicStack t ={0,0,size,0,"",unitsize};
+int isUnderFlow(dynamicStack* stack){
+    return (stack->head_==-1?1:0);
+}
+int isOverFlow(dynamicStack* stack){
+    if(stack != NULL ){
+        return(((stack->head_)==(stack->size_-1))?1:0);
+    }
+    setError(stack,INVALID_STACK,"INVALID_STACK");
+    return FAIL;    
+}
+void setError(dynamicStack* stack,int err,char* msg){
+    stack->errorCode_=err;
+    strcpy(stack->desc_,msg);
+}
+int push(dynamicStack* stack,void* argData){
+    if(isOverFlow(stack)){
+        setError(stack,STACK_OVERFLOW,"STACK_OVERFLOW");
+        return FAIL;
+    }
+    ++stack->head_;
+    memcpy(stack->dataBlock_+stack->head_,argData,stack->unitsize_);
 }
 
-
+void printStack(dynamicStack* stack){
+    //size_t index=0;
+    for (int index = 0;index<=stack->head_;++index){
+        printf("[%d]->",*(int*)(stack->dataBlock_+index));
+        if(index==20){
+         printf("PANGA in Loop \n");
+            break;
+        }
+    }
+}
 
 /*
 int pop(){

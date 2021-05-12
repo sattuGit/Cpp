@@ -1,5 +1,6 @@
-CC=gcc
+CC=gcc 
 FLAG=-std=c99
+FLAG += -g
 all: stackStatic stackDynamic stackStruct
 
 # TO-DO handling release and debug diffrently 
@@ -7,7 +8,7 @@ debug: CC += -g -DDEBUG
 stackDynamic: stackD.o mainD.o
 	$(CC) -o stackD stackD.o mainD.o
 stackStatic: stack.o main.o
-	$(CC) -o stack mainCStack.o stack_c.o
+	$(CC) $(FLAG) -o stack mainCStack.o stack_c.o
 stackStruct: stackStruct.o mainStackStructure.o
 	$(CC) -o stackStruct stackStruct.o mainStackStructure.o
 
