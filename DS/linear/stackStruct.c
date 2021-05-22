@@ -57,8 +57,24 @@ int push(dynamicStack* stack,void* argData){
         setError(stack,STACK_OVERFLOW,"STACK_OVERFLOW");
         return FAIL;
     }
-    ++stack->head_;
-    memcpy(stack->dataBlock_+stack->head_,argData,stack->unitsize_);
+    stack->head_=stack->head_+1;
+    int jumper = stack->head_;
+    
+    printf("JUMPER %d\n",jumper);
+    jumper=jumper*stack->unitsize_;
+    int unit= stack->unitsize_;
+    void *tmp = stack->dataBlock_+jumper;
+    printf("%p, %d, %p\n\n",stack->dataBlock_,jumper,tmp);
+    //printf("%p,%p,%p,%p",stack->dataBlock_,stack->dataBlock_+0,stack->dataBlock_+1,stack->dataBlock_+4);
+     
+    //void ptr=
+    //printf("\ngoing to write at %d %d %p of %p",stack->head_,stack->head_*stack->unitsize_,stack->dataBlock_, stack->dataBlock_+stack->head_);
+    //
+    if (jumper == 0 )memcpy(stack->dataBlock_+(stack->head_*stack->unitsize_),argData,stack->unitsize_);
+    else
+    memcpy(stack->dataBlock_+4,argData,unit);
+    
+
 }
 
 void printStack(dynamicStack* stack){

@@ -13,7 +13,7 @@ int main()
     if(isUnderFlow(&s1))printf("++++++++");
     printf("........................");
     int tmp=10;
-    push(&s1,&tmp);
+    if (push(&s1,&tmp)==FAIL) return 0;
     int tmp2=20;
     push(&s1,&tmp2);
     printStack(&s1);
