@@ -21,6 +21,13 @@ int main()
   obj2.setCount(5);
   obj2.display(); //55
   obj3.display();
+
+  defaultCopyConst p1(9);
+  defaultCopyConst p2(8);
+  p1=p2;
+  p2.setData(7);
+  p1.display();
+  p2.display();
   cout<<"-------------------"<<endl;
   deepCopyConst x1(2);
   deepCopyConst x2(x1);
@@ -28,6 +35,16 @@ int main()
   x2.display();
   x1.setCount(3);
   x1.setData(3);
+  x1.display();
+  x2.display();
+
+
+  cout<<"-------------------"<<endl;
+  x1=x2;
+  x1.display();
+  x2.display();
+  
+  x2.setData(6);
   x1.display();
   x2.display();
   

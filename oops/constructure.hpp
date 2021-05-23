@@ -8,13 +8,19 @@ class defaultCopyConst{
     int* data;
   public:
     int getCount(){return count;}
-    void setCount(int cnt){count=cnt;}
+    void setCount(const int cnt){count=cnt;}
     int getData(){return *data;}
-    void setData(int cnt){*data=cnt;}
+    void setData(const int cnt){*data=cnt;}
     defaultCopyConst(int argData=0):count{argData}{ /*as this will act as default copy constructure as well*/
       data = new int(argData);
     }
     void display();
+    void operator=(const defaultCopyConst& obj){
+      defaultCopyConst& tmp = const_cast<defaultCopyConst&>(obj);
+      int x = tmp.getCount();
+      this->setCount(tmp.getCount());
+      this->setData(tmp.getData());
+    }
 };
 
 class deepCopyConst{
@@ -33,6 +39,7 @@ class deepCopyConst{
       data= new int(arg.getData());
     }
     void display();
+    
 };
 
 class ConstDemo{

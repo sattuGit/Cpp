@@ -9,6 +9,6 @@ void defaultCopyConst::display()
 }
 void deepCopyConst::display()
 {
-    cout<<"count:"<<count<<" datais:"<<*data<<endl;
+    cout<<"count: "<<count<<" datais:"<<*data<<endl;
 }
 

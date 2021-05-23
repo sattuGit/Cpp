@@ -8,5 +8,6 @@ main.o: oopsMain.o
 	$(CC) -c oopsMain.cpp 
 const.o: constructure.hpp constructure.cpp
 	$(CC) -c constructure.hpp constructure.cpp
+.PHONY: clean
 clean:
-	rm -f oops  *.o  *.gch 
+	rm -f oops *.o 
