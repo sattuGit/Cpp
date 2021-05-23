@@ -2,6 +2,39 @@
 #define _CONSTRUCT_HPP
 #include<iostream>
 using namespace std;
+/*This is to demo copy constructor (deep copy and shallow copy*/
+class defaultCopyConst{
+    int count;
+    int* data;
+  public:
+    int getCount(){return count;}
+    void setCount(int cnt){count=cnt;}
+    int getData(){return *data;}
+    void setData(int cnt){*data=cnt;}
+    defaultCopyConst(int argData=0):count{argData}{ /*as this will act as default copy constructure as well*/
+      data = new int(argData);
+    }
+    void display();
+};
+
+class deepCopyConst{
+    int count;
+    int* data;
+  public:
+    int getCount(){return count;}
+    void setCount(int cnt){count=cnt;}
+    int getData(){return *data;}
+    void setData(int cnt){*data=cnt;}
+    deepCopyConst(int argData=0):count{argData}{ /*as this will act as default copy constructure as well*/
+      data = new int(argData);
+    }
+    deepCopyConst(deepCopyConst &arg){
+      count=arg.count;
+      data= new int(arg.getData());
+    }
+    void display();
+};
+
 class ConstDemo{
     public:
         int data;
@@ -47,12 +80,13 @@ class RVODemo{
         cout<<"["<<x<<","<<y<<"]"<<endl;
     }
 };
+/*
 RVODemo makeObject(){
     RVODemo p(8);// = new  RVODemo();
     p.display();
     return p;
 }
-
+*/
 class A{
   int *ptr;
 public:
