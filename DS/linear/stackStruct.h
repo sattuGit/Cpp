@@ -16,4 +16,12 @@ struct stack_{
     size_t unitsize_;
 }; 
 typedef struct stack_ dynamicStack;
+
+int allocateMem(dynamicStack *);
+int initStack(dynamicStack *,size_t,size_t);
+int isUnderFlow(dynamicStack*);
+int isOverFlow(dynamicStack*);
+void setError(dynamicStack*,int,char*);
+int push(dynamicStack*,void*);
+void printStack(dynamicStack*);
 #endif
