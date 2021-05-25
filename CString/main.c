@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include"strFun.h"
+#include"interviewtask.h"
 #include<string.h> // inbuild strlen 
 void main(){
     /*How to declare CStyle String
@@ -26,5 +27,19 @@ void main(){
     //printf("%s\n",c3);
     printf("%s\n",c4);
     printf("%s\n",c5);
+
+    printf("***************************************\n");
+    char ch[]="ABCD";
+    /*ch[]="XYZ";
+    ch="XYZ"; ERROR as array can't be reassigne directly */
+    printf("***************************************\n");
+    /*remove duplicate char from string */
+    char* str1="silence is a Source of great strength\0";
+    char str2[strlen(str1)+1];
+    memset(str2,0,strlen(str2));
+    removeDuplicateChar(str1,str2,0);
+    printf("%s\n%s\n",str1,str2);
+    removeDuplicateChar(str1,str2,1);
+    printf("%s\n%s\n",str1,str2);
     return;
 }
