@@ -10,21 +10,17 @@ void removeDuplicateChar(const char* inArgs,char* outArgs, short isCase)
         tmp=0;
     for(;inArgs[index]!='\0';++index){
         tmp = inArgs[index];
-        //printf("\n************\n %c ",tmp); 
         if( !isCase && (tmp>64 && tmp<(65+26)))
         {    
             tmp+=32;
-            //printf(" CONVERT TO %c",tmp);
         }
         if (pool[tmp]!=1)
         {
-            //printf(" put at %d",targetindex);
             outArgs[targetindex]=tmp;
             pool[tmp]=1;
             ++targetindex;
-        }//else printf(" skipped ");
+        }
     }
-    putc('\n',stdout);
     outArgs[targetindex+1]='\0';
     return ;
 }
