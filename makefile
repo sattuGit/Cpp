@@ -5,6 +5,6 @@ SUBDIRS = $(wildcard */.)
 $(TOPTARGETS): $(SUBDIRS)
 $(local): make -f makeLocal
 $(SUBDIRS):
-	$(MAKE) -C $@ #$(MAKECMDGOALS)
+	$(MAKE) -C $@ $(MAKECMDGOALS)
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)

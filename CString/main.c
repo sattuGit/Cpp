@@ -41,5 +41,15 @@ void main(){
     printf("%s\n%s\n",str1,str2);
     removeDuplicateChar(str1,str2,1);
     printf("%s\n%s\n",str1,str2);
+    printf("***************************************\n");
+    memset(str2,0,strlen(str2));
+    reverseStr(str1,str2);
+    printf("%s\n%s\n",str1,str2);
+    printf("***************************************\n");
+    memset(str2,0,strlen(str2));
+    revWord(str1,str2);
+    printf("%s\n%s\n",str1,str2);
+    
+    
     return;
 }
