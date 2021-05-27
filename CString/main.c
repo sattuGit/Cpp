@@ -46,10 +46,14 @@ void main(){
     reverseStr(str1,str2);
     printf("%s\n%s\n",str1,str2);
     printf("***************************************\n");
-    memset(str2,0,strlen(str2));
-    revWord(str1,str2);
-    printf("%s\n%s\n",str1,str2);
-    
-    
+    /*Reverse words in a string */
+    {
+        char* str3 = "this is a Simple code";
+        char str4[strlen(str3)+1];
+        memset(str4,0,strlen(str4));
+    revWord(str3,str4);
+    printf("%s\n%s\n",str3,str4);
+    }
+    //printf("%s\n%s\n",str3,str4);
     return;
 }
