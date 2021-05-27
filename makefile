@@ -1,16 +1,10 @@
 CC=g++
 CXXFLAGS=-std=c++11
-CXXFLAGS += -g
-all: basicIOCPP DSLinear
+TOPTARGETS = all clean
+SUBDIRS = $(wildcard */.)
+$(TOPTARGETS): $(SUBDIRS)
+$(local): make -f makeLocal
+$(SUBDIRS):
+	$(MAKE) -C $@ $(MAKECMDGOALS)
 
-basicIOCPP: basicIOcpp.o
-	$(CC)  $(CXXFLAGS) -o basicIOCPP basicIO.o
-basicIOcpp.o: basicIO.cpp
-	$(CC) -c basicIO.cpp
-DSLinear:
-	make -C ./DS/linear
-.PHONY: clean	
-clean:
-	make -C ./DS/linear clean
-	rm basicIOCPP *.o 
-	
+.PHONY: $(TOPTARGETS) $(SUBDIRS)
