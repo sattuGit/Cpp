@@ -1,7 +1,7 @@
 /*
  *  This is to demostrate dynamic memory in c/C++
  * http://man7.org/linux/man-pages/man3/malloc.3.html
- * https://stackoverflow.com/questions/20094394/why-do-we-cast-return-value-of-malloc
+ * https://stackoverflow.com/questions/20094394/why-do-we-cast-return-value-of-malloc 
  * https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/
  */
  
