@@ -1,15 +1,8 @@
-#CC=gcc
 CC=g++
-#CCFLAG=-std=c99
-CCFLAG=-std=c++11
 CCFLAG += -g
 all: main standAlone
-main: memoryMain.o memory.o
-	$(CC) $(CCFLAG) -o memory memory.o memoryMain.o
-main.o: memoryMain.cpp
-	$(CC) -c memoryMain.cpp
-memory.o: memory.h memory.cpp
-	$(CC) -c memory.h memory.cpp
+main: main.cpp memory.cpp memory.h
+	$(CC) $(CCFLAG) -o memory  memory.cpp memory.h main.cpp 
 standAlone: dynamicMemory.cpp
 	$(CC) $(CCFLAG) -o dynamicMemory dynamicMemory.cpp
 .PHONY: clean
