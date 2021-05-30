@@ -3,7 +3,7 @@ FLAG=-g
 FLAG+= -std=gnu++11
 all: oops
 oops: access.o constructure.o main.o
-	$(CC) -o oops  $(FLAG) constructure.o oopsMain.o
+	$(CC) -o oops  $(FLAG) access.o constructure.o oopsMain.o
 main.o: oopsMain.o
 	$(CC) -c oopsMain.cpp 
 const.o: constructure.hpp constructure.cpp

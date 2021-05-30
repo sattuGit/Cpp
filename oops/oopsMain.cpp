@@ -1,5 +1,6 @@
 #include<iostream>
 #include "constructure.hpp"
+#include "access.h"
 #include <vector>
 //https://www.geeksforgeeks.org/constructors-c/
 using namespace std;
@@ -71,5 +72,8 @@ int main()
     vector <A> vec;
   vec.push_back(A());
   cout<<"-----------"<<endl;*/
+  std::cout << "----------------------------- "<< std::endl;
+  testAccessClass();
+  testFriendFun();
     return 0;
 }

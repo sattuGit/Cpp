@@ -3,4 +3,8 @@
 
 #include<string>
 class DemoAccess;
+class DemoFriend;
+
+bool testAccessClass();
+bool testFriendFun();
 #endif
