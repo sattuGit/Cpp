@@ -41,5 +41,4 @@ class overloadNew{
 };
 
 void* getMemory(size_t size);
-
 #endif
