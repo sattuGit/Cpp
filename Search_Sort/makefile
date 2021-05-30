@@ -6,4 +6,4 @@ short: selectionSort.cpp
 	$(CC) -c selectionSort.cpp
 .PHONY: clean
 clean:
-	rm  *.o 
+	rm -f  *.o 
