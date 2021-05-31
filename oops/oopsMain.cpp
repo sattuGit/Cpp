@@ -1,6 +1,7 @@
 #include<iostream>
 #include "constructure.hpp"
 #include "access.h"
+#include "friend.h"
 #include <vector>
 //https://www.geeksforgeeks.org/constructors-c/
 using namespace std;
