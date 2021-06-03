@@ -2,6 +2,8 @@
 #include "constructure.hpp"
 #include "access.h"
 #include "friend.h"
+#include "testInheritance.h"
+//#include "inheritance.h"
 #include <vector>
 //https://www.geeksforgeeks.org/constructors-c/
 using namespace std;
@@ -76,5 +78,8 @@ int main()
   std::cout << "----------------------------- "<< std::endl;
   testAccessClass();
   testFriendFun();
-    return 0;
+  std::cout << "----------------------------- "<< std::endl;
+  testInhritance();
+  //SimpleBase a;
+  return 0;
 }
