@@ -13,4 +13,4 @@ interviewtask.o: interviewtask.c interviewtask.h
 
 .PHONY: clean
 clean:
-	rm *.o *.gch CString
+	rm -f *.o *.gch CString

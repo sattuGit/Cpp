@@ -10,4 +10,4 @@ main: template.cpp
 
 .PHONY: clean
 clean:
-	rm *.o *.gch template
+	rm -f *.o *.gch template

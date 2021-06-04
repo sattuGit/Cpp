@@ -7,4 +7,4 @@ standAlone: dynamicMemory.cpp
 	$(CC) $(CCFLAG) -o dynamicMemory dynamicMemory.cpp
 .PHONY: clean
 clean:
-	rm *.o  *.gch memory dynamicMemory
+	rm -f *.o  *.gch memory dynamicMemory

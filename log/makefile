@@ -6,4 +6,4 @@ log: log.h log.c
 	$(CC) -c log.c log.h
 .PHONY: clean
 clean:
-	rm *.o *.gch
+	rm -f *.o *.gch
