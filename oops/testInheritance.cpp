@@ -1,6 +1,8 @@
-#include <iostream>
 #include "inheritance.h"
+
+#include <iostream>
 using namespace std;
+
 bool testInhritance()
 {
     std::cout << "Inheritance Test Caes start ......" << std::endl;

@@ -1,41 +1,14 @@
 #include<iostream>
 using namespace std;
-class SimpleDerive;class SimpleBase{
-    //default private 
-    int data;
-    
-    public:
-        int pubData;
-        
-        SimpleBase(int arg=0){
-            std::cout << "SimpleBase construtor "<<arg << std::endl;
-            data=arg;
-            pubData=arg;
-        }
-    protected:
-};
+#include "inheritance.h"
 
-class SimpleDerive:public SimpleBase
+SimpleBase::SimpleBase(int arg=0):data(arg),pubData(arg)
 {
-    int data2;
-    
-    public:
-    /*
-        void display(){
-            std::cout << "Driven class display method " << std::endl;
-            //std::cout << pubData << std::endl;
-        }
-    */    
-        SimpleDerive(int argBase, int argDerive):SimpleBase{argBase}{
-            std::cout << "SimpleDerive construtor "<<argDerive << std::endl;
-            data2=argDerive;
-        }
-};
-/*
-void SimpleDerive::display()
+    std::cout << "SimpleBase construtor "<<arg << std::endl;
+}
+
+SimpleDerive::SimpleDerive(int argBase, int argDerive):SimpleBase(argBase)
 {
-    std::cout << "Driven class display method " << std::endl;
-    std::cout << pubData << std::endl;
-}*/
-
-
+    this->data=argDerive;
+    std::cout << "SimpleDerive construtor "<<argDerive << std::endl;
+}
