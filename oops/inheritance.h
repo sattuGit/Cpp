@@ -7,15 +7,30 @@ class SimpleBase{
     //default private 
     int data;
     public:
+        int dupX;
         int pubData;
-         SimpleBase(int);
+        SimpleBase(int);
+        void display();
+    protected:
+        int proData;
 };
 
-class SimpleDerive:public SimpleBase
+class SimpleDerivePubic : public SimpleBase
 {
-    int data;
+        int data;
     public:
-    SimpleDerive(int,int);
+        int dupX;
+        SimpleDerivePubic(int,int);
+        void display();
+};
+
+class SimpleDerive:  SimpleBase
+{
+        int data;
+    public:
+        int dupX;
+        SimpleDerive(int,int);
+        void display();
 };
 
 #endif
