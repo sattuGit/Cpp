@@ -1,3 +1,15 @@
 Q:can construtor be a virtual 
 Q: what is base and drive both are virtual 
 Q: find out combination of [012] all subset 
+Q: write all 5 default function (move is also default need to make check) 
+Q: linked list ka middile node find and print ,
+	via : couner 
+	via : pointer 
+Q: take very big data (digit) 
+	fund me paas karo , return sum and odd number 
+	unsigen long long (any thing bigger then this )
+Q: exception handling 
+Q: Exception handling
+	how to handle if code brok in production 
+Q: assignmenr opertor, why we return this pointer 
+Q: static member ko noraml function me initilize kar sakete hai kya ?
