@@ -1,0 +1,3 @@
+Q:can construtor be a virtual 
+Q: what is base and drive both are virtual 
+Q: find out combination of [012] all subset 
