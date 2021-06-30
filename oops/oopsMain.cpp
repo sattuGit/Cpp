@@ -80,6 +80,9 @@ int main()
   testFriendFun();
   std::cout << "----------------------------- "<< std::endl;
   testInhritance();
-  //SimpleBase a;
+  std::cout << "----------------------------- "<< std::endl;
+  testDynamicBinding();
+  std::cout << "----------------------------- "<< std::endl;
+  //SimpleBase a; 
   return 0;
 }

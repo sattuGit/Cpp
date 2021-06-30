@@ -11,6 +11,7 @@ class SimpleBase{
         int pubData;
         SimpleBase(int);
         void display();
+        virtual void dynamicBind(){std::cout<<"SimpleBase::dynamicBind Called"<<std::endl;}
     protected:
         int proData;
 };
@@ -22,6 +23,8 @@ class SimpleDerivePubic : public SimpleBase
         int dupX;
         SimpleDerivePubic(int,int);
         void display();
+         void dynamicBind(){std::cout<<"SimpleDerivePubic::dynamicBind Called"<<std::endl;}
+        /*above virtual is not making any effect if base and derive both are virtaul */
 };
 
 class SimpleDerive:  SimpleBase

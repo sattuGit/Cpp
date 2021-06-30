@@ -2,7 +2,17 @@
 
 #include <iostream>
 using namespace std;
+bool testDynamicBinding(){
+    SimpleBase *base =  new SimpleBase(2);
+    SimpleDerivePubic *derive = new SimpleDerivePubic(1,2);
+    base->dynamicBind();
+    derive->dynamicBind();
 
+    base =  derive;
+    base->dynamicBind();
+    derive->dynamicBind();
+    return true;
+}
 bool testInhritance()
 {
     std::cout << "Inheritance Test Caes start ......" << std::endl;

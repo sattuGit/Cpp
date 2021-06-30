@@ -44,3 +44,6 @@ Ans: No.
 	constructor is inbetween process of creating objects(while execution of constructor rutine , object is not in created state)
 	but static members should be fully prepared when there definition loaded into memory 
 	
+Q what is dengling pointer 
+Q name all default memebr method provided by compiler into a class 
+Ans : Default copy , Default assignment, Default distructor, Default constructor , Defaul move (???? need to check)
