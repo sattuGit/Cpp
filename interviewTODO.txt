@@ -47,3 +47,8 @@ Ans: No.
 Q what is dengling pointer 
 Q name all default memebr method provided by compiler into a class 
 Ans : Default copy , Default assignment, Default distructor, Default constructor , Defaul move (???? need to check)
+Q: How to check datatype size without using sizeof 
+
+Q print only unique char in string (Mphsis)
+Q why we use new 
+Q Reverse string in word by word 
