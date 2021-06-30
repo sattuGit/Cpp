@@ -1,3 +1,6 @@
+#ifndef _PUZZ_SLL_
+#define _PUZZ_SLL_
+#include "../DS/base/nodes.h"
 class SingleLL{
     public:
         SingleLL(){
