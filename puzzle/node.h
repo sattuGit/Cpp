@@ -1,31 +1,6 @@
-#ifndef _NODE_
-#define _NODE_
+#ifndef _SINGLE_LL_
+#define _SINGLE_LL_
 
-class node{
-    
-};
-
-class Node{
-    protected:
-        int _data;
-        Node *_next;
-        Node *_previous;
-    public:
-        Node(int data, Node *nxt=nullptr,Node *pre=nullptr){
-            _data =data;
-            _next= nxt;
-            _previous = pre;
-        }
-    
-        int getData()const{return _data;}
-        Node* getNext() const {return _next;}
-        Node* getPrevious() const {return _previous;}
-
-        int setData(int argData){ return _data=argData;}
-        bool setNext(Node *addr){_next =  addr;}
-        bool setPrevious(Node *addr){_previous =  addr;}
-        
-};
 
 class SingleLL{
     public:
