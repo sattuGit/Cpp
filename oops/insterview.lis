@@ -1,0 +1,3 @@
+constructre :
+  * base constructure members are assigend in same order in which they declare in class (sequence of passing argument won't matter)
+  https://www.geeksforgeeks.org/g-fact-32/
