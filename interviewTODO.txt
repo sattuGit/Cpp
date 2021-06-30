@@ -51,4 +51,4 @@ Q: How to check datatype size without using sizeof
 
 Q print only unique char in string (Mphsis)
 Q why we use new 
-Q Reverse string in word by word 
+Q Reverse string in word by word
