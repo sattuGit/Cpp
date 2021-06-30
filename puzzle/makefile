@@ -1,9 +1,11 @@
 CC=g++
 FLAG=-g
 FLAG+= -std=gnu++11
-all: oops
-oops: 
-	$(CC)  --version #-o puzzle  $(FLAG) inheritance.o testInheritance.o friend.o access.o constructure.o oopsMain.o
+all: puzzle
+puzzle: testMidLinkList.o 
+	$(CC)  -o puzzle  $(FLAG) main.cpp testMidLinkList.cpp testMidLinkList.hpp SingleLL.h
+testMidLinkList.o: testMidLinkList.cpp testMidLinkList.hpp SingleLL.h
+	$(CC)  -c testMidLinkList.cpp testMidLinkList.hpp SingleLL.h
 .PHONY: clean
 clean:
 	rm -f puzzle *.o *.gch
