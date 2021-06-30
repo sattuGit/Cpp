@@ -14,3 +14,5 @@ Q: Exception handling
 Q: assignmenr opertor, why we return this pointer 
 Q: static member ko noraml function me initilize kar sakete hai kya ?
 Q what is dengling pointer 
+Q name all default memebr method provided by compiler into a class 
+Ans : Default copy , Default assignment, Default distructor, Default constructor , Defaul move (???? need to check)
