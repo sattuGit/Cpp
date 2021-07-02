@@ -51,4 +51,20 @@ Q: How to check datatype size without using sizeof
 
 Q print only unique char in string (Mphsis)
 Q why we use new 
-Q Reverse string in word by word
+	https://isocpp.org/wiki/faq/freestore-mgmt
+	https://www.learncpp.com/cpp-tutorial/dynamic-memory-allocation-with-new-and-delete/
+	https://www.tutorialspoint.com/cplusplus/cpp_dynamic_memory.htm
+	https://www.geeksforgeeks.org/variable-length-arrays-in-c-and-c/
+	https://www.geeksforgeeks.org/memory-layout-of-c-program/
+	https://www.geeksforgeeks.org/new-and-delete-operators-in-cpp-for-dynamic-memory/
+	https://www.geeksforgeeks.org/overloading-new-delete-operator-c/
+	https://www.modernescpp.com/index.php/overloading-operator-new-and-delete
+	
+Q Reverse string in word by word  <need to complete>
+
+Q: type of pointer (smart/unique/auto .....) 
+Q: auto x; ????
+
+Q : why abstract class have distructor ?
+Q why virtual distructor ?
+Q https://stackoverflow.com/questions/6502828/what-does-default-mean-after-a-class-function-declaration
