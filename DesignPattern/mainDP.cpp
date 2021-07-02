@@ -2,5 +2,6 @@
 #include "testDP.h"
 int main(){
     testFactoryDP();
-    return 0;
+    testSingletonDP();    
+return 0;
 }
