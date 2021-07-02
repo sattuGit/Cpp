@@ -15,6 +15,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "Building all repository"
       - run: make
-      - run: ./CString/CString
-      - run: ./template/template
+      - run: ./DesignPattern/dpattern
