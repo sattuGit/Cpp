@@ -46,12 +46,28 @@ void reverseStr(const char* str,char *revStr)
 {
     size_t strlen=myStrlen(str);
     char *tmp = str+strlen-1; //setting pointer at last character 
-    //printf("\n%ld,%s\n",strlen,tmp);
     for (int i=0;i<strlen;++i){
         revStr[i]=*(tmp-i);
     } 
 }
-
+void revStr(char* str) /*update same string*/{
+    size_t len = strlen(str);
+    char tmp;
+    --len;
+    TRACE("[%d]::%s\n",len,str);
+    for(int i =0 ;i<(len/2)+1;++i){
+        TRACE ("%d,",i);
+        TRACE("%c <=> %c ,",str[i],str[len-i]);
+        TRACE("\n");
+        tmp= *(str+i);
+        TRACE("%c ,",tmp);
+        *(str+i)= *(str+len-i);
+       // *(str+i)=*(str+len-i);
+        //str[len-i]=tmp;
+       // *(str+len-i)=tmp;
+        
+    }    
+}
 void removeDuplicateChar(const char* inArgs,char* outArgs, short isCase)
 {
     if (inArgs==NULL) return ;
