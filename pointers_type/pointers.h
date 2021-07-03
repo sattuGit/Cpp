@@ -1,5 +1,6 @@
 #ifndef __POINTERS_
 #define __POINTERS_
+#include <iostream>
 /*Simple class*/
 class Demo{
         public:
