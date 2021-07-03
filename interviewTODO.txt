@@ -1,0 +1,70 @@
+Q:can construtor be a virtual 
+ANS: NO 
+Details :
+
+two reasons I can think of:
+Technical reason
+The object exists only after the constructor ends.In order for the constructor to be dispatched using the virtual table , there has to be an existing object with a pointer to the virtual table , but how can a pointer to the virtual table exist if the object still doesn't exist? :)
+Logic reason
+You use the virtual keyword when you want to declare a somewhat polymorphic behaviour. But there is nothing polymorphic with constructors , constructors job in C++ is to simply put an object data on the memory . Since virtual tables (and polymorphism in general) are all about polymorphic behaviour rather on polymorphic data , There is no sense with declaring a virtual constructor.
+-----------------------------------------------------------------
+Q: what is base and drive both are virtual 
+Ans : once a member function is declared as a virtual function in a base class, it becomes virtual in every class derived from that base class. 
+writting keyword Virtual is not required 
+-----------------------------------------------------------------
+Q: size of class 
+Ans : 
+		sum of all memeber variales size 
+	Special case :
+		A) if no member variales then 1 byte 
+		=> so that class have to have some memory which helps to assign address (each class should have unique address)
+		B) in some case padding may occure 
+		C) member functions and static data members are not participated in size of class  
+		D) in case if Virtual additional memory for VTPR (Virtual Table pointer) (for 64 bit compiler it would be 8 byte)
+		
+		
+Ref: https://www.includehelp.com/cpp-tutorial/size-of-a-class-in-cpp-padding-alignment-in-class-size-of-derived-class.aspx
+-----------------------------------------------------------------
+Q: find out combination of [012] all subset 
+Q: write all 5 default function (move is also default need to make check) 
+Q: linked list ka middile node find and print ,
+	via : couner 
+	via : pointer 
+Q: take very big data (digit) 
+	fund me paas karo , return sum and odd number 
+	unsigen long long (any thing bigger then this )
+Q: exception handling 
+Q: Exception handling
+	how to handle if code brok in production 
+Q: assignmenr opertor, why we return this pointer 
+-----------------------------------------------------------------
+Q: Can we initalize static members in constructor ?
+Ans: No.
+	we can use static variable inside construtor but not inilalize 
+	constructor is inbetween process of creating objects(while execution of constructor rutine , object is not in created state)
+	but static members should be fully prepared when there definition loaded into memory 
+	
+Q what is dengling pointer 
+Q name all default memebr method provided by compiler into a class 
+Ans : Default copy , Default assignment, Default distructor, Default constructor , Defaul move (???? need to check)
+Q: How to check datatype size without using sizeof 
+
+Q print only unique char in string (Mphsis)
+Q why we use new 
+	https://isocpp.org/wiki/faq/freestore-mgmt
+	https://www.learncpp.com/cpp-tutorial/dynamic-memory-allocation-with-new-and-delete/
+	https://www.tutorialspoint.com/cplusplus/cpp_dynamic_memory.htm
+	https://www.geeksforgeeks.org/variable-length-arrays-in-c-and-c/
+	https://www.geeksforgeeks.org/memory-layout-of-c-program/
+	https://www.geeksforgeeks.org/new-and-delete-operators-in-cpp-for-dynamic-memory/
+	https://www.geeksforgeeks.org/overloading-new-delete-operator-c/
+	https://www.modernescpp.com/index.php/overloading-operator-new-and-delete
+	
+Q Reverse string in word by word  <need to complete>
+
+Q: type of pointer (smart/unique/auto .....) 
+Q: auto x; ????
+
+Q : why abstract class have distructor ?
+Q why virtual distructor ?
+Q https://stackoverflow.com/questions/6502828/what-does-default-mean-after-a-class-function-declaration

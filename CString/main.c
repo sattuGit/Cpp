@@ -54,6 +54,12 @@ void main(){
     revWord(str3,str4);
     printf("%s\n%s\n",str3,str4);
     }
-    //printf("%s\n%s\n",str3,str4);
+    /*Test reverse string by updating itself */
+    {
+        char* str3 = "this is a Simple code";
+        printf("String before :_%s_\n",str3);
+        revStr(str3);
+        printf("String After :_%s_\n",str3);
+    }
     return;
 }

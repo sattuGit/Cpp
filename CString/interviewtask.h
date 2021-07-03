@@ -3,5 +3,5 @@
 void removeDuplicateChar(const char*,char*, short );
 void reverseStr(const char*,char*);
 void revWord(const char*, char*);
-//revers string *update Same Str TO_DO
+void revStr(char*); /*update same string*/
 #endif 
