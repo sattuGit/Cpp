@@ -3,4 +3,6 @@
 bool testSmartPointer();
 bool testUniquePointer();
 bool testSharePointer();
+bool testWeekPointer();
+bool testAutoPointer();
 #endif
