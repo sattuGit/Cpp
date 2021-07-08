@@ -68,3 +68,6 @@ Q: auto x; ????
 Q : why abstract class have distructor ?
 Q why virtual distructor ?
 Q https://stackoverflow.com/questions/6502828/what-does-default-mean-after-a-class-function-declaration
+Q: tail-recursion optimization
+Q: lambda function 
+Q:14 – C++ contains the functionality for returning an Rvalue from a called function. For example, it may contain a pointer to a string that was read from a file. In this context, what are the advantages of returning an Rvalue?
