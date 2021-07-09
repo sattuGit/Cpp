@@ -1,8 +1,5 @@
 CC=gcc
 CFLAG=-g
-#CFLAG+= -std=gnu++14
-#CFLAG+= -std=gnu++98
-#LFLAG = -lpthread
 COMPILEONLY = -c
 OBJFILES = testShareLib.o libfoo.a
 TARGET = testShare testDyLib
