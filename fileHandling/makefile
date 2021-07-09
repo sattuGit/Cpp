@@ -1,24 +1,20 @@
 CC=g++
 CFLAG=-g
-CFLAG+= -std=gnu++14
+CFLAG+= -std=c++17
 
 COMPILEONLY = -c
-OBJFILES =  
-TARGET = 
+OBJFILES =  fileSystem.o main.o
+TARGET =  fileTest
 INTERMEDIATE =  *.gch
 
 all: $(TARGET)
 $(TARGET): $(OBJFILES)
-	# link dynamic lib , only symbol entry , at run time load it form $LD_LIBRARY_PATH
-	#-ldl enable dynamic loading 
-	$(CC) -o core  core.o -ldl  
-core.o: core.cpp
-	$(CC)  $(COMPILEONLY) core.cpp
-libdistrubution.so: distrubution.cpp
-	# -fpic position independent code , for dynamci lib 
-	$(CC)  $(COMPILEONLY) distrubution.cpp -fpic
-	# making share object .so 
-	$(CC) -shared -o libdistrubution.so distrubution.o
+	$(CC) -o $(TARGET) $(CFLAG) $(OBJFILES)
+main.o: main.cpp
+	$(CC) $(CFLAG) $(COMPILEONLY) main.cpp
+fileSystem.o: fileSystem.cpp
+	#suppport function 
+	$(CC) $(CFLAG) $(COMPILEONLY) fileSystem.cpp 	
 .PHONY: clean
 clean:
-	rm -f $(TARGET) $(OBJFILES) distrubution.o libdistrubution.so  $(INTERMEDIATE)
+	rm -f $(TARGET) $(OBJFILES) fileTest  $(INTERMEDIATE)

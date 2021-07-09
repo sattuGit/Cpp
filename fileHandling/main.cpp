@@ -3,10 +3,13 @@
 #include"fileSystem.h"
 int main(){
     
-    std::string pathName = "";
-    std::string fileName =  "test.txt";
+    std::string pathName = "/workspace/Cpp";
+    std::string fileName =  "STLX";
     std::string line;
-    isPathExist();
+    
+    /*check path exist*/
+    if (isFileExistRSearch(pathName,fileName))std::cout<<"Exist.."<<std::endl;else std::cout<<"Oops.."<<std::endl; 
+    return 0;
     std::ofstream fout;
     std::ifstream fin;
     
