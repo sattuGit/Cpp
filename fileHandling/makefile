@@ -3,8 +3,8 @@ CFLAG=-g
 CFLAG+= -std=gnu++14
 
 COMPILEONLY = -c
-OBJFILES = core.o libdistrubution.so 
-TARGET = core
+OBJFILES =  
+TARGET = 
 INTERMEDIATE =  *.gch
 
 all: $(TARGET)
