@@ -1,0 +1,17 @@
+Q: can constructor be private :
+	Yes , example singleton 
+Q: can distructor can be virtual
+	Yes 
+	private distructor class can't have stack object ie must be created using new 
+	
+Q: can virtual function be static 
+	virtual function always access through pointer so can't be static 
+	
+Q: can we have virtaul constructor, can we have virtaul distructor
+	We can have a virtual destructor but not have a virtual constructor.
+
+	logic : constructor cannot be virtual, 
+	because when a constructor of a class is executed there is no virtual table in the memory, 
+	means no virtual pointer defined yet. So, the constructor should always be non-virtual.
+	
+	By same logic we can't initilize static variable in constructor(others reason too )

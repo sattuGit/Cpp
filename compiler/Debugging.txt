@@ -1,0 +1,23 @@
+Ref:: http://www.unknownroad.com/rtfm/gdbtut/gdbuse.html
+
+you must compile code wth -g flag for debugging 
+
+assume a.out is executable 
+
+gdb a.out	(attach program)
+gdb run arg1 arg2 ...	(run program)
+gdb kill (terminate running process/program)
+gdb quit (quit gdb )
+
+
+analysze core file 
+gdb a.out 
+gdb -c coreFile 
+OR 
+gdb a.out -c my_core_file
+
+
+gdb where 
+	will reach to last beak point 
+
+

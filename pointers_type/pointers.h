@@ -4,8 +4,8 @@
 /*Simple class*/
 class Demo{
         public:
-            Demo():x{5}{std::cout << "Constructor :: Demo" << std::endl;}
-            ~Demo(){std::cout << "Distructor :: Demo" << std::endl;}
+            Demo(int arg=5):x{arg}{std::cout << "Constructor :: Demo"<< std::endl;}
+            ~Demo(){std::cout << "Distructor :: Demo " << typeid(*this).name()  <<std::endl;}
             int getData(){return x;}
             void setData(int arg){x=arg;}
         private:

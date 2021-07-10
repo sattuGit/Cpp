@@ -2,6 +2,7 @@
 #include "testDP.h"
 int main(){
     testFactoryDP();
-    testSingletonDP();    
+    testSingletonDP();
+    testSingletonThreadSafe();    
 return 0;
 }

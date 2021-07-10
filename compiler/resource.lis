@@ -1,0 +1,30 @@
+Q::How to only perform preprocessing only 
+gcc -E *.c  ## it will genrate output in standard conslole 
+gcc -E *.c -o <outputFileName>
+
+Q:: How to compile (not link code)
+gcc -c *.c *.cpp  
+## -c  pre processing + compiling 
+## we don't pass *h file its alraedy mereged in preprocessng state 
+
+#how build executable 
+gcc -o <exename> *.c *.cpp *.o *.a -l<libname> -L<libPath>
+
+
+How to compile static lib OR dynamic lib 
+https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+
+
+Q: How to view symbol table :
+nm <object/executable/lib> 
+nm -g : display only global symbol 
+
+Q: How to find out the dynamic libraries executables loads when run?
+ldd <binray>
+
+Q: How to check function call in any binery 
+ltrace <binary>
+
+
+Q: dynamic loading 
+https://theo-penavaire.medium.com/loading-of-a-c-class-from-a-shared-library-modern-c-722d6a830a2b

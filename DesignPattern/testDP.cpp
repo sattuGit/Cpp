@@ -1,6 +1,30 @@
 #include<iostream>
+#include<pthread.h> 
 #include"DPF.h"
 #include"SINGLE.h"
+
+void* getObject(void *threadID){
+    SingletonTS *pSingle = SingletonTS::getInstance();
+    long p = reinterpret_cast<long>(threadID);
+    std::cout<<"Count is "<<p<<"|"<< pSingle->getPoolCount()<<","<<pSingle->getPoolSize()<<std::endl;    
+}
+bool testSingletonThreadSafe()
+{
+    short int MAX = 100;
+    pthread_t threads[MAX];
+    int rc;
+    for(int i =0;i<MAX;++i){
+        std::cout<<"Thread Creation start["<<i<<"]"<<std::endl;
+        rc = pthread_create(&threads[i],NULL,getObject,(void*)i);
+        if(rc){
+            std::cout<<"Thread Creation Failed"<<std::endl;
+            return false;
+        }
+    }
+    pthread_exit(NULL);
+    return true;
+}
+
 bool testSingletonDP(){
     std::cout << "-------------------------------" << std::endl;
     Singleton* obj1 = Singleton::getInstance();

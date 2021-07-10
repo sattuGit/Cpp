@@ -6,5 +6,4 @@ $(TOPTARGETS): $(SUBDIRS)
 $(local): make -f makeLocal
 $(SUBDIRS):
 	$(MAKE) -C $@ $(MAKECMDGOALS)
-
 .PHONY: $(TOPTARGETS) $(SUBDIRS)
