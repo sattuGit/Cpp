@@ -61,8 +61,6 @@ class Doubly{
                     }
                 }
                     return false;
-                }
-                 
             }
             return false ;
         }
