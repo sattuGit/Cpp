@@ -81,12 +81,42 @@ class DNode{
         DNode* getPrevious() const {return _previous;}
 
         int setData(int argData){ return _data=argData;}
-        bool setNext(DNode *addr){_next =  addr;}
-        bool setPrevious(DNode *addr){_previous =  addr;}        
+        void setNext(DNode *addr){_next =  addr;}
+        void setPrevious(DNode *addr){_previous =  addr;}        
 		DNode* operator++ (){
 			return this->getNext();
 		}
 		DNode* operator++ (int){
+			return this->getNext();
+		}
+};
+
+
+/*Template class for doubly node */
+template<class T>
+class TDNode{
+    protected:
+        T _data;
+        TDNode *_next;
+        TDNode *_previous;
+    public:
+        TDNode(T data, TDNode *nxt=nullptr,TDNode *pre=nullptr){
+            _data =data;  //incase of class with pointer , assignment shoudl be overloaded 
+            _next= nxt;
+            _previous = pre;
+        }
+    
+        T getData()const{return _data;}
+        TDNode* getNext() const {return _next;}
+        TDNode* getPrevious() const {return _previous;}
+
+        void setData(T argData){ _data=argData;}
+        void setNext(TDNode *addr){_next =  addr;}
+        void setPrevious(TDNode *addr){_previous =  addr;}        
+		TDNode* operator++ (){
+			return this->getNext();
+		}
+		TDNode* operator++ (int){
 			return this->getNext();
 		}
 };
