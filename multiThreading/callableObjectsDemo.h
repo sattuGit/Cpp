@@ -33,8 +33,9 @@ auto lembda_f = [](const size_t &count)->void {for(auto i=0;i<count;++i){
 /*Simple Demon lembda*/
 auto demonL = []()->void { 
     static int i=0;
+	while(true){
     std::cout<<"Demon..["<<i<<"]"<<std::endl;
-    //std::this_thread::sleep_for (std::chrono::seconds(1));
-    //std::this_thread::sleep_for(std::chrono::milliseconds(20000) );
+    std::this_thread::sleep_for (std::chrono::seconds(1));
+	}
     };
 #endif 
