@@ -6,7 +6,7 @@
 
 void revWord(const char* inStr, char* outStr)
 {
-    TRACE("\nSize %d,%d\n",strlen(inStr),strlen(outStr));
+    TRACE("\nSize %lu,%lu\n",strlen(inStr),strlen(outStr));
     size_t  index=0,
             atLeastOneSpace=0,
             revStrIndex=-1;
