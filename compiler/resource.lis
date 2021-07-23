@@ -28,3 +28,7 @@ ltrace <binary>
 
 Q: dynamic loading 
 https://theo-penavaire.medium.com/loading-of-a-c-class-from-a-shared-library-modern-c-722d6a830a2b
+
+
+Q: How to set libpath 
+ LD_LIBRARY_PATH
