@@ -3,7 +3,7 @@ CFLAG=-g
 CFLAG+= -std=gnu++14
 #CFLAG+= -std=gnu++98
 COMPILEONLY = -c
-OBJFILES = compilerMacro.h
+OBJFILES = STL_list.o STL_vector.o 
 TARGET = compile
 INTERMEDIATE =  *.gch
 
