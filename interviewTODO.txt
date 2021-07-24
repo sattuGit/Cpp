@@ -72,4 +72,14 @@ Q: tail-recursion optimization
 Q: lambda function 
 Q:14 – C++ contains the functionality for returning an Rvalue from a called function. For example, it may contain a pointer to a string that was read from a file. In this context, what are the advantages of returning an Rvalue?
 Q: what is functor 
-Q: assert
+Q: exit quit assert
+Q: how to trigger function before main , before exit 
+Q: 	int foo(int& x) {return x+1;}
+	int bar(const int& x) {return x+1;}
+	int i = foo(1);
+	int i = bar(1);
+	
+	int x = 7;
+	int &y = 7;
+	const int& z = 7 ;
+Q: using base 

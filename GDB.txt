@@ -1,0 +1,46 @@
+Debug tools :
+yum install gdb valgrind systemtap ltrace strace
+sudo yum install yum-utils
+yum  debuginfo-install libgcc-8.4.1-1.el8.x86_64 libstdc++-8.4.1-1.el8.x86_64
+
+
+GDB :
+	compile code with -g : so executable have debug information 
+
+How to start :
+	A) 	gdb executable <Enter>
+		run <argList>
+	B)  gdb --args a.out arg1 arg2
+
+How to see code :
+	layout next 
+How to print vaible value :
+	print VARIABLE 
+	## for array 
+	print *arr@len
+watch a varible for change 
+	watch VARIABLE
+
+--------------------------------------------------------------------
+what is core dump :
+Q: how huge can be dump file 
+Ans : its configurable on plateform level 
+	to see current limit 
+	ulimit -c
+	ulimit -H -c  // check hard limit 
+	ulimit -S -c  // check soft limit 
+	modify : /etc/security/limits.conf 
+enable core dump 
+ulimit -S -c 0	 // set soft limit to 0 ie no dump 	
+ulimit -S -c unlimited my-program-to-troubleshoot   // only allow my-program-to-troubleshoot
+
+core file Name and location :
+cd /proc/sys/kernel
+cat core_pattern
+
+
+
+
+
+
+
