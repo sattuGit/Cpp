@@ -3,5 +3,8 @@ https://codehs.com/tutorial/neel/Introduction_to_Multiprocessing_in_C-1
 https://www.journaldev.com/40793/execvp-function-c-plus-plus
 
 Forking 
+execvp
+execvp (shared memory)
+
 demon process 
 popen
