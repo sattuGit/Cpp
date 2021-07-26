@@ -4,7 +4,11 @@
 int main (){
     std::cout << " Start Point Only for parents " << std::endl;
     pid_t pid =fork();
-    if(pid){
+    
+    if(pid<0){
+        /*fork fail*/
+    }
+    else if(pid>0){
         std::cout << "Only for parents after child fork"<<getpid() << std::endl;
         
         /*We need to hold our program to wait till child done

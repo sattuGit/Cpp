@@ -7,7 +7,11 @@ int main(){
     std::cout<<"START This is main program and it's process id is :"<<myPid<<" forked by "<<myPPid<<std::endl;    
     
     pid_t pid = fork();
-    if(pid != 0 ){
+    
+    if(pid<0){
+        /*fork fail*/
+    }
+    else if(pid != 0 ){
         std::cout<<" Non Zero pid ie we are in parent "<<getpid()<<std::endl;    
         std::cout<<"Child is "<<pid<<std::endl;
         
