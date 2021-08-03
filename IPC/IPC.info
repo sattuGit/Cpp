@@ -1,0 +1,7 @@
+How to run system command :
+system("ps -ef");
+getpid() and getppid() system call unistd.h
+
+waitid() // will cover with signals 
+ 
+Pipes : Communication between two related processes.
