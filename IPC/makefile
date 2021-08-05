@@ -1,7 +1,7 @@
 CC=g++
 FLAG=-g
 FLAG+= -std=gnu++11
-TARGET= sharedMemory monitorChild pipeSimplex orphan zombie demon
+TARGET= sharedMemory monitorChild pipeSimplex orphan zombie demon namePipe
 all: $(TARGET)
 forkSimple: sharedMemory.c
 	$(CC) -o sharedMemory $(FLAG) sharedMemory.c
@@ -16,7 +16,9 @@ zombie: zombie.c
 	$(CC) -o zombie $(FLAG) zombie.c
 demon: demon.c
 	$(CC) -o demon $(FLAG) demon.c
-
+namePipe: namePipeFIFO_Server.c namePipeFIFO_Client.c
+	$(CC) -o serverFIFO $(FLAG) namePipeFIFO_Server.c
+	$(CC) -o clientFIFO $(FLAG) namePipeFIFO_Client.c
 .PHONY: clean
 clean:
-	rm -f  $(TARGET) *.gch *.o xyz.txt
+	rm -f  $(TARGET) *.gch *.o xyz.txt serverFIFO clientFIFO
