@@ -10,7 +10,6 @@
 int main(){
     
     /*Create named pipe*/
-    
     umask(0);  // reset permission mask
     
     // TO-DO , open file if and only if its exist 
@@ -31,12 +30,14 @@ int main(){
     char buffer[21];
     const char *eod="END";
     while(true){
-            readCount =read(fd,buffer,sizeof(buffer)-1);
-            buffer[readCount]='\0';
-            
+            sleep(1);
+            readCount =read(fd,buffer,sizeof(buffer));
+            //std::cout<<"|"<<readCount<<"|"<<buffer<<"|"<<std::endl;
+            std::cout << buffer << std::endl;
             /*Check exit condition*/
             if(!strcmp(buffer,eod)){
                 close(fd);
+                
                 break;  
             }
     }

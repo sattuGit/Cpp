@@ -26,12 +26,8 @@ int main(){
         std::cout<<"Feed data "<<std::endl;
         fgets(buffer,sizeof(buffer),stdin);
         buffLen = strlen(buffer);
+        //std::cout << "Client|"<<buffLen<<"|"<<buffer<<"|" << std::endl;
         buffer[buffLen-1]='\0';
-        
-        
-        //readCount =read(fd,buffer,sizeof(buffer)-1);
-        //buffer[readCount]='\0';
-            
         write(fd,buffer,buffLen);
         
         /*Check exit condition*/
