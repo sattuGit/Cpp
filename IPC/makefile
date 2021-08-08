@@ -1,7 +1,7 @@
 CC=g++
 FLAG=-g
 FLAG+= -std=gnu++11
-TARGET= sharedMemoryRead sharedMemoryWrite sharedMemory monitorChild pipeSimplex orphan zombie demon namePipe
+TARGET= sharedMemoryRead sharedMemoryWrite  monitorChild pipeSimplex orphan zombie demon namePipe
 all: $(TARGET)
 sharedMemoryWrite: sharedMemoryWrite.c
 	$(CC) -o sharedMemoryWrite $(FLAG) sharedMemoryWrite.c
