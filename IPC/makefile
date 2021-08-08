@@ -1,10 +1,14 @@
 CC=g++
 FLAG=-g
 FLAG+= -std=gnu++11
-TARGET= sharedMemory monitorChild pipeSimplex orphan zombie demon namePipe
+TARGET= sharedMemoryRead sharedMemoryWrite sharedMemory monitorChild pipeSimplex orphan zombie demon namePipe
 all: $(TARGET)
-forkSimple: sharedMemory.c
-	$(CC) -o sharedMemory $(FLAG) sharedMemory.c
+sharedMemoryWrite: sharedMemoryWrite.c
+	$(CC) -o sharedMemoryWrite $(FLAG) sharedMemoryWrite.c
+sharedMemoryRead: sharedMemoryRead.c
+	$(CC) -o sharedMemoryRead $(FLAG) sharedMemoryRead.c
+#forkSimple: sharedMemory.c
+#	$(CC) -o sharedMemory $(FLAG) sharedMemory.c
 monitorChild: monitorChild.c
 	#$(CC) -o monitorChild  -fpermissive $(FLAG) monitorChild.c
 	$(CC) -o monitorChild   $(FLAG) monitorChild.c
