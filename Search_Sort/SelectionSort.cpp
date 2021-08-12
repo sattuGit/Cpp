@@ -15,13 +15,13 @@ bool compare(int v1, int v2){
 
 void SelectionSort(struct arr argList){
     for(int i =0; i<argList.len -1 ; ++i){
-           std::cout << "--------loop step "<<i << std::endl;
+           //std::cout << "--------loop step "<<i << std::endl;
             int lowerIndex = i;
             for(int j=i;j<argList.len;++j){
-                std::cout << "   SubLoop " << j<<std::endl;
+                //std::cout << "   SubLoop " << j<<std::endl;
                 if (compare(argList.data[j],argList.data[lowerIndex])){ 
                     lowerIndex=j;
-                    std::cout << "lowest update "<<lowerIndex << std::endl;
+                    //std::cout << "lowest update "<<lowerIndex << std::endl;
                 }else{
                     
                 }
@@ -30,7 +30,7 @@ void SelectionSort(struct arr argList){
                 int tmp = argList.data[i];
                 argList.data[i] = argList.data[lowerIndex];
                 argList.data[lowerIndex]=tmp;
-                std::cout << "Swap "<<argList.data[i]<<"  "<< argList.data[lowerIndex]<< std::endl;
+                //std::cout << "Swap "<<argList.data[i]<<"  "<< argList.data[lowerIndex]<< std::endl;
             }
     }
 }
