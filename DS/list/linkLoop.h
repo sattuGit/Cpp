@@ -7,7 +7,7 @@
 
 #ifndef LINKLOOP_H_
 #define LINKLOOP_H_
-#include "../../base/nodes.h"
+#include "../base/nodes.h"
 class LinkLoop {
 public:
 	LinkLoop();

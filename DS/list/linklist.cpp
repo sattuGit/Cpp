@@ -1,6 +1,6 @@
 #include<iostream>
-#include"list/src/singleLinkList.h"
-#include "list/src/linkLoop.h"
+#include"singleLinkList.h"
+#include "linkLoop.h"
 using namespace std;
 
 int main(){
@@ -18,7 +18,8 @@ int main(){
 	cout<<" 5 for Reverce List \n";
 	cout<<" 7 for Make Loop \n";
 	cout<<" 8 for FindLoop  \n";
-	cout<<" 9 for Display  \n"; 
+	cout<<" 9 for FindMid  \n";
+	cout<<" 99 for Display  \n"; 
 	cout<<" Any other for Exit \n";
 	cin>>choice;
 		switch(choice){
@@ -30,8 +31,10 @@ int main(){
 			case 4: sl->del(pos);break;
 			case 5: sl->rev();break;
 			case 7: sl->makeLoop();break;
-			case 8: sl->testLoop(); break;
-			case 9: sl->display(); break;
+			//case 8: sl->testLoop(); break;
+			case 8: sl->testAndRepairLoop(); break;
+			case 9: sl->findMid(); break;
+			case 99: sl->display(); break;
 			default: choice =0;
 		}
 	}

@@ -4,10 +4,9 @@
  *  Created on: Apr 3, 2020
  *      Author: satendra
  */
-
+#include<iostream>
 #include "linkLoop.h"
-
-#include "../../base/nodes.h"
+#include "../base/nodes.h"
 
 LinkLoop::LinkLoop() {
 	// TODO Auto-generated constructor stub
@@ -28,7 +27,7 @@ LoopNode * LinkLoop::getNode(void* addressData){
 }
 bool LinkLoop::addUnique(void* argData){
 	LoopNode *newNode = getNode(argData);
-	if(!newNode) {cout<<"Memory Resource ERROR\n";return false;}
+	if(!newNode) {std::cout<<"Memory Resource ERROR"<<std::endl;return false;}
 	LoopNode *tmp = headLinkLoop ;
 	if(!tmp){headLinkLoop=newNode;return true;}
 	while(tmp)
