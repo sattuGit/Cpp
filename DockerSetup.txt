@@ -1,0 +1,3 @@
+sudo snap install docker
+docker pull sonarqube:9.0-community
+registry.access.redhat.com/sonarqube
