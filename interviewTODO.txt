@@ -84,3 +84,5 @@ Q: 	int foo(int& x) {return x+1;}
 	const int& z = 7 ;
 Q: using base 
 Q: SOLID priciple 
+Q: /Why-cant-we-overload-the-assignment-operator-using-the-friend-function
+Q: self check in assignment operator overloading 

@@ -24,11 +24,14 @@ class Person{
            _pData = new (std::nothrow) int(argObj.getData());
        }
        /*Assignment overloading to avoid shellow copy */
-       void operator = (const Person &argObj){
+       Person& operator = (const Person &argObj){
+           if(this != std::addressof(argObj)){      // self assignment check p1=p2 case 
             std::cout << "Assignment operator overloading" << std::endl;
             _name = argObj.getName();
             _jobID= argObj.getJobID();
             _pData= new (std::nothrow) int(argObj.getData());
+           }
+            return *this; // to handle a=b=c case otherwise return type won't metter 
        }
        
        bool operator < (const Person &a){
