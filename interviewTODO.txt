@@ -86,3 +86,40 @@ Q: using base
 Q: SOLID priciple 
 Q: /Why-cant-we-overload-the-assignment-operator-using-the-friend-function
 Q: self check in assignment operator overloading 
+Q: how to use const variable in class 
+	#include<iostream>
+class A{
+    const int a;
+    public:
+        A(int x=9):a{x}{std::cout<<"constructor A "<<x<<std::endl;} // it's allowed in initilization 
+    int get(){return a;}
+    void set(int x){*(const_cast<int*>(&a))=x;}
+};
+
+int main(){
+    A a(3);
+    std::cout<<a.get()<<std::endl;
+    a.set(4);
+    std::cout<<a.get()<<std::endl;
+    
+   A b[5]{A(1),A(2),A(3),A(4),A(5)};
+   A c[5]={A(6),A(7),A(8),A(9),A(10)};
+    
+    A *x = new A[5]{A(11),A(12),A(13),A(14),A(15)};
+    //A *x = new A[5]={A(11),A(12),A(13),A(14),A(15)};  // error compile 
+
+
+    return EXIT_SUCCESS;
+}
+
+Q: dynamic allocate array of object with parametrized constrctor 
+A: in above example
+
+Q: conversion constructor 
+Q:  explicit keyword 
+
+
+Q static object , normal objecr declaration in main , order of execution 
+
+
+

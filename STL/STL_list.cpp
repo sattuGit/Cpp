@@ -1,5 +1,5 @@
 #include<iostream>
-#include<list>
+#include<list>   // doubly link list 
 
 bool even (const int& val) {return val%2==0?true:false;}
 
