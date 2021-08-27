@@ -21,7 +21,7 @@ class overloadNew{
             if there is empty class with no member variable , it will work fine 
             
             */
-            return nullptr;
+            return (void*)nullptr;
             //return malloc(size);
             
         }

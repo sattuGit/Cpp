@@ -120,6 +120,8 @@ Q:  explicit keyword
 
 
 Q static object , normal objecr declaration in main , order of execution 
+Q: where dynamic cast require <show a demo>
+Q  static object vs normal object allocation 
 
 
 
