@@ -1,0 +1,48 @@
+#include<iostream>
+#include<map>
+#include<algorithm>
+#include<set>
+#include<iterator>
+#include<functional>
+
+class Vendor{
+    public:
+    int _amout;
+    int _unit;
+    float _perUnit;
+    Vendor(const int &argAmout,const int &argUnit ):_amout{argAmout},_unit{argUnit}{
+        _perUnit=(_amout*1.0)/(_unit);
+    }
+    
+    bool operator < (const Vendor& rhs)const{
+        return _perUnit < rhs._perUnit;
+    }
+    bool operator > (const Vendor& rhs)const{
+        return _perUnit > rhs._perUnit;
+    }
+};
+
+int main(){
+    std::multiset<Vendor,std::greater <Vendor>> list;
+    list.insert(Vendor(10,2));
+    list.insert(Vendor(5,3));
+    list.insert(Vendor(15,5));
+    list.insert(Vendor(7,7));
+    list.insert(Vendor(18,4));
+    list.insert(Vendor(3,1));
+    int capecity = 14;
+    for(const auto &it:list){
+        std::cout<<"Available"<< it._amout<<"|"<<it._unit<<std::endl;
+        
+        int tmpBuy;
+        if(it._unit>capecity){
+            tmpBuy=capecity;
+        }else {
+            tmpBuy=it._unit;
+        }
+        std::cout<<"Buy : "<< tmpBuy <<std::endl;
+        capecity =capecity- tmpBuy;
+        if(!capecity) break;
+    }
+    return EXIT_SUCCESS;
+}

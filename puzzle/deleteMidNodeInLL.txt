@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+};
+bool build(Node *&argHead, const int &argData){
+    Node *t = new (std::nothrow) Node();
+    if(t){
+        t->data=argData;
+        t->next=argHead;
+        argHead=t;
+        return true;
+    }else return false;
+}
+void display(Node *&argRoot){
+    Node *t=argRoot;
+    while(t){std::cout<<t->data<<",";t=t->next;}
+    std::cout<<std::endl;
+}
+
+bool del(Node *&root, int pos){
+    //std::cout<<root->data<<"|"<<pos<<std::endl;
+    if (!root || pos<1) return false;
+    Node *tmp,*tmp2;
+    if(pos==1){tmp=root;root=root->next; delete tmp;return true;}
+    tmp=root;
+    while(pos-->2 && tmp){
+        tmp=tmp->next;
+    }
+    if(tmp && tmp->next){
+        //std::cout<<"A del start "<<root->data<<std::endl;
+        tmp2=tmp->next;
+        tmp->next=tmp2->next;
+        delete tmp2;
+        return true;
+    }
+    return false;
+}
+int main()
+{
+    
+    Node *head = nullptr;
+    int loop=10;
+    while(loop-->0){
+        if(!build(head,loop)) std::cerr<<"ERRRO"<<std::endl;
+    }
+    display(head);
+    if(!del(head,10)) std::cerr<<"ERRRO"<<std::endl;
+    display(head);
+    if(!del(head,9)) std::cerr<<"ERRRO"<<std::endl;
+    display(head);
+    return 0;
+}

@@ -1,0 +1,19 @@
+memory allocation in C++ class 
+-------------------------------------
+All the non-static members are organised in memory much like a struct
+static members stored separately (One copy )
+class function :
+	its similer to normal function , placed in global space 
+	only diffrence is , calling have one additional argumnet called this pointer 
+Q: can you delete this pointer 
+	[edit: the code for the function itself is not stored with your object -- this allows you to do fun things like delete this and continuing execution of a member function provided you no longer access the object you just deleted].
+
+
+Q: How virtual table works 
+	* Any method define as virtual , 
+	will be automaticly defined as virtual in all derived class by compiler 
+	*The virtual method table is the same for all objects belonging to the same class, 
+	and is therefore typically shared between them.
+	* each object have one pointer VPTR to virtual table for each class (each VPTR add 8 byte in size in 64bit ) 
+	*Virtual table stores NULL pointer to pure virtual functions in ABC.
+	
