@@ -125,3 +125,5 @@ Q  static object vs normal object allocation
 
 
 
+Q mutable and volatile keyword 
+Q what is "down qualification" and "up qualification"
