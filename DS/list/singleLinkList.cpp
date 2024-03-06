@@ -1,7 +1,41 @@
 #include<iostream>
 #include "singleLinkList.h"
 #include "linkLoop.h"
+#include  <vector> 
+#include <algorithm>
 using namespace std;
+
+void SLList::findMid(){
+	Node *jump1,*jump2;
+	jump1=jump2=head;
+	if(head && jump2->getLink())jump2=jump2->getLink();
+	
+	while(jump2!=nullptr){
+		if(jump2->getLink()!=nullptr){
+			jump2=jump2->getLink()->getLink();	
+			jump1=jump1->getLink();
+		}else break;
+	}
+	if (jump1)std::cout << "Test mid is "<<jump1->getData() << std::endl;
+}
+void SLList::testAndRepairLoop(){
+	std::vector<Node*> trace;
+	Node *tmp = head;
+	while(tmp){
+		trace.push_back(tmp);
+		//std::cout <<"push"<<tmp->getData()  << std::endl;
+		if(std::find(trace.begin(),trace.end(),tmp->getLink()) != trace.end()){
+			std::cerr<<"Loop found for "<<tmp->getData()<<"|"<<tmp->getLink()->getData() <<std::flush<<std::endl;
+			//std::cerr<<trace.size()<<std::endl;
+			break;
+		}
+		tmp=tmp->getLink(); 		
+	}
+	if(tmp){
+		std::cout << "Fixing ...." << std::endl;
+		tmp->setLink(nullptr);
+	}
+}
 void SLList::testLoop(){
 	Node	* tmp = head ;
 	LinkLoop *llp = new LinkLoop();

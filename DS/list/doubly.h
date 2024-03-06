@@ -6,7 +6,7 @@ Author : Satendra K gupta
 */
 #ifndef _SATTU_DLLIST_
 #define _SATTU_DLLIST_
-#include "../../base/nodes.h"
+#include "../base/nodes.h"
 template<class T>
 class Doubly{
     private :

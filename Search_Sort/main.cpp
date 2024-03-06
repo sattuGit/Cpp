@@ -1,6 +1,7 @@
 #include<iostream>
 #include "SelectionSort.h"
 #include "binarySearch.h"
+#include "insertionSort.h"
 
 int main()
 {
@@ -11,7 +12,8 @@ int main()
     dataList.len = sizeof(data)/sizeof(int); 
     
     display(dataList);          //before sorting 
-    SelectionSort(dataList);    // sorting 
+    //SelectionSort(dataList);    // sorting 
+    insertionSort(dataList);
     display(dataList);          // after sorting 
     
     /*Binary Search */
