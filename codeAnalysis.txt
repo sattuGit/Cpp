@@ -1,0 +1,6 @@
+Code analysis : 
+https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+
+
+Static code analysis 
+Dyanmic code analysis 
